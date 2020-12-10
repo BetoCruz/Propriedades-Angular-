@@ -1,0 +1,10 @@
+<div>
+<p>property-binding works!</p>
+<button (click)="mostrar()" > Mostrar paragrafo</button>
+
+
+<p [hidden]="!verParagrafo" > Paragrafo habilitado com []</p>
+<p bind-hidden ="!verParagrafo" > Paragrafo habilitado com 'bind-'</p>
+
+<p hidden="!verParagrafo" > Paragrafo habilitado com interpolção sem []</p>
+</div>
