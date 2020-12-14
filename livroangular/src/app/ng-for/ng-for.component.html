@@ -1,0 +1,8 @@
+<h2>ng-for works!</h2>
+
+<button (click)="atualizar()"> Atualizar </button>
+<ul *ngFor="let nome of nomes; let i = index; trackBy: meuSave">
+    <li>
+        Nome da pessoa é: {{nome.nome}}, Com ID:{{nome.id}}, Sua Posição é: {{i+1}}
+    </li>
+</ul>
