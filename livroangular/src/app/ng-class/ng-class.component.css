@@ -1,0 +1,12 @@
+.cor-fundo{
+    background-color:rgb(194, 122, 122);
+}
+.cor-letra{
+    color:rgb(219, 219, 219);
+}
+.estilo-letra{
+    font-style: italic;
+}
+.borda-paragrado{
+    border: 2px green solid;
+}

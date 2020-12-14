@@ -1,0 +1,33 @@
+<h2>[ng-class] works!</h2>
+
+<!--Uso do ClassBinding com valor booleano fixo -->
+<p [class.cor-fundo]="true">Usando class-binding, [class.cor-fundo]="true"</p>
+
+<!--Uso do ClassBinding com variavel e metodo de alteração do valor booleano da diretiva -->
+<!--Usado para configuração de CSS qdo usarmo , preferencialmene, uma classe-->   
+<p [class.cor-fundo]="valorClassBinding">usando calss binding, [class.cor-fundo]="valorClassBinding"</p>
+
+
+<button (click)="mudarClassBinding()">Add CSS</button>
+
+<p [class.cor-fundo]="valorClassBinding"
+    [class.cor-letra]="valorClassBinding"
+    [class.estilo-letra]="valorClassBinding"
+    [class.borda-paragrafo]="valorClassBinding">
+    Usando class binding com varias classes CSS
+</p>
+
+<hr><!--********************************************************-->
+
+<p [ngClass]="{'cor-fundo': true}">Usando ng Class declarando a classe CSS no template</p>
+
+
+<!--diretiva [ngClass] uso recomendado para configuração de 2 ou mais Classes CSS-->
+<p [ngClass]="{
+    'cor-fundo': valorClassBinding,
+    'cor-letra':valorClassBinding,
+    'estilo-letra':valorClassBinding,
+    'borda-paragrafo': valorClassBinding}">Usando ng class com várias classes CSS </p>
+
+ <!--Usando a diretiva ngclass com metodo que atribui valores a varias variaveis-->   
+<p [ngClass]="classes()">Usando ng Class declarando com metodo na classe na classe do componente</p>
