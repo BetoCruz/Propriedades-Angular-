@@ -12,7 +12,7 @@ export class TwoWayDataBindingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   mudar(valor){
