@@ -1,0 +1,34 @@
+<h1>*ng-if works!</h1>
+
+<!--Não há condicional else , devendo ser usado ngIfs com condições diferentes-->
+<div *ngIf="true"> *ngIf verdadeiro. </div>
+
+<div *ngIf="false"> *ngIf falso . </div>
+<hr>
+
+<!--<div *ngIf="condition">Content to render when condition is true.</div>-->
+
+
+<button (click)="mostrar()"> Exibe nome da escola de treinamentos!! </button>
+<br>
+
+<!--<ng-template [ngIf]="condition"><div>Content to render when condition is
+    true.</div></ng-template>
+-->
+<p [hidden]="getValor()">[hidden] com metodo getValor(), sendo true esconde e false apresenta </p>
+
+<p *ngIf="getValor()"> Treinamentos com a condicional *ngIf </p>
+<hr>
+<!--******************************************************************************************-->
+
+<p *ngIf="cursos.length == 0"> não temos cursos disponiveis </p>
+<p *ngIf="cursos.length > 0"> Agora temos cursos cadastrados</p>
+
+<button (click)="addCurso()">add novo curso</button>
+<button (click)="excluiCurso()">add novo curso</button>
+
+<p *ngIf="mostraNome">ngIf com uma variavel  </p>
+
+
+
+
