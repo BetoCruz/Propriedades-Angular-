@@ -1,0 +1,29 @@
+<h5>Event-binding works!</h5><hr>
+
+<h5>Event binding passando todas as propriedades da tag html</h5>
+<button (click)="meuClick()"> Click aqui ! </button>
+
+<input (keyup)="digitou($event)">
+<hr>
+
+<!--Variavel de template #valorInput-->
+<h5>Usando variável de template</h5>
+<input #valorInput (keyup)="digitouVarTemplate(valorInput.value)">
+<hr>
+
+<!--Keyup------------------------------------------------->
+<h5>Evento (KEYUP) para validação de senha</h5>
+<input type="password" #qtdSenha  (keyup)="validaSenha(qtdSenha.value)">
+<button [disabled]="!habilitarBotao" (click)="gravarSenha(qtdSenha.value)">Gravar Senha</button>
+<hr>
+
+
+<!--Evento KEYUP.ENTER ------------------------------------>
+<h5>Evento KEYUP.ENTER </h5>
+<input type="text" #conteudo  (keyup.enter)="adicionar(conteudo.value); conteudo.value ='' ">
+
+<ul>
+    <li *ngFor="let item of valores">
+        {{item}}
+    </li>
+</ul>
