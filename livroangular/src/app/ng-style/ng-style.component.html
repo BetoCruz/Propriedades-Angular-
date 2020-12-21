@@ -1,0 +1,28 @@
+<h2>[ng-style]</h2>
+<h3>Exercícios usando [style.propriedades]</h3>
+
+<p [style.font-size]="30 + 'px' ">Valor fixo</p>
+
+<button (click)="incrementa()" >Aumentar letras</button>
+
+<p [style.font-size]="valorFonte">Método da classe componente sendo referenciado no template</p>
+
+<p [style.font-size]="validaFonte ? 'x-large' : 'smaller'" [style.color]="validaCor ? 'red' :'blue'">muda valor com condição ternaria</p>
+<button (click)="mudaFonte()">mudaFonte</button>
+<button (click)="mudaCor()">mudaCor</button>
+
+<hr>
+
+
+<h3>----------------------Exercícios usando [ngStyle]-----------------------------</h3>
+<p [ngStyle]="{'font-size': '30px'}">Valor  fixo na tela</p>
+
+<p [ngStyle]="{'font-size': valorFonteEx }">Método da class componente sendo referenciado no template</p>
+
+<button (click)="incrementaEx()">Maior</button>
+<button (click)="DecrementaEx()">Menor</button>
+
+<p [ngStyle]="{'font-size': validaFonteEx ? 'x-large' : 'smaller', 'color': validaCorEx ? 'red':'blue' }" >Muda valor com condição ternaria</p>
+
+<button (click)="mudaFonteEX()">mudaFonteEx</button>
+<button (click)="mudaCorEx()">mudaCorEx</button>
