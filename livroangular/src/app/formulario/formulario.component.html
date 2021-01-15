@@ -1,0 +1,54 @@
+<h5>Formulario works!</h5>
+
+<!--Criação de formulario com o objeto contato instanciado dentro da classe do componente,
+     e a tag do formulario HTML no template com o atributo nome, então usamos a diretiva [(ngModelo)]
+      para vincular os daddos da classe componente no template.-->
+
+
+<form (ngSubmit)="enviarDados()" #cadastro="ngForm"><!--Atribuindo valor para a variavel de template ele se comporta como uma diretiva e
+     com a atribuição de ngform temos uma diretiva de formulario/-->
+
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" [(ngModel)]="contato.nome" #nome="ngModel" name="nome" required><p></p>
+
+        <!--Validação com recuperação do estado atual-->
+        <div [hidden]="nome.valid || nome.pristine " >
+            <p>O valor nome é obrigatório</p>
+        </div>
+    </div>
+    <br>
+    
+    
+    <div ngModelGroup="todosContatos" #todosContatos="ngModelGroup" >
+        <div>
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" [(ngModel)]="contato.telefone" #telefone="ngModel"  name="telefone" required>
+
+            <div *ngIf="telefone.invalid && telefone.dirty" >
+                <p>O numero do telefone é obrigaório!</p>
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" [(ngModel)]="contato.email" #email="ngModel" name="email">
+
+            <div [hidden]="email.pristine" >
+                <p>O conteúdo foi mudado!</p>
+            </div>
+            <div *ngIf="email.touched" >
+                <p>Clicou fora do campo!</p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <button type="submit">Enviar</button>
+
+</form>
+
+
+<p>{{todosContatos}}</p>
+<p>{{todosContatos.value|json}}</p>
