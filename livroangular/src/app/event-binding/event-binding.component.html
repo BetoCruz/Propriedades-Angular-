@@ -6,7 +6,7 @@
 <input (keyup)="digitou($event)">
 <hr>
 
-<!--Variavel de template #valorInput-->
+<!--Variavel de template #valorInput---------------------->
 <h5>Usando variável de template</h5>
 <input #valorInput (keyup)="digitouVarTemplate(valorInput.value)">
 <hr>
@@ -19,7 +19,7 @@
 
 
 <!--Evento KEYUP.ENTER ------------------------------------>
-<h5>Evento KEYUP.ENTER </h5>
+<h5>Evento KEYUP.ENTER adicionando na lista </h5>
 <input type="text" #conteudo  (keyup.enter)="adicionar(conteudo.value); conteudo.value ='' ">
 
 <ul>
@@ -27,3 +27,9 @@
         {{item}}
     </li>
 </ul>
+<hr>
+
+<!--(BLUR)------------------------------------------------->
+<h5>Event (BLUR)</h5>
+<input type="text" #data (blur)="verIdade(data.value)" >
+<p>Você tem: {{idade}} anos de idade</p>

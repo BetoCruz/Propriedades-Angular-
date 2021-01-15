@@ -13,12 +13,16 @@ export class EventBindingComponent implements OnInit {
   //-------------- Event keyup.enter ---------------------
   valores: string [] = [];
 
+  //--------------Blur----------------------.
+  idade: number = 0;
+
 
   constructor() { }
 
   ngOnInit():  void  {
   }
 
+  
 
   meuClick(): void {
     console.log('Evento Meu click do botão');
@@ -32,7 +36,7 @@ export class EventBindingComponent implements OnInit {
     console.log(valor);
   }
 
-//---------------------Evento Keyup validando senha---------------------
+  //---------------------Evento Keyup validando senha---------------------
   validaSenha(valor): void {
     if( valor.length >= 5){
       this.habilitarBotao = true;
@@ -40,15 +44,20 @@ export class EventBindingComponent implements OnInit {
       this.habilitarBotao = false;
     }
   }
-//Método usano para captura e apresentação de senha em alert()
+  //Método usano para captura e apresentação de senha em alert()
   gravarSenha(senha): void {
     alert('Senha gravada com sucesso , sua senha é: ' + senha);
   }
   
-//-------------- Event keyup.enter ---------------------
-adicionar(valor: string):void{
-  this.valores.push(valor);
-}
+  //-------------- Event keyup.enter ---------------------
+  adicionar(valor: string):void{
+    this.valores.push(valor);
+  }
 
+  //--------------Blur-------------
+  verIdade(valor): void {
+    let ano = new Date();
+    this.idade = ano.getFullYear() - valor;
+  }
 
 }
