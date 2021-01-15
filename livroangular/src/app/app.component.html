@@ -1,5 +1,6 @@
 <h1>{{title}}</h1>
-<!--<app-iterpolation-binding></app-iterpolation-binding>
+<!--<button (click)="enviarMsg()">Envia Mensagem</button>
+<app-iterpolation-binding></app-iterpolation-binding>
 <app-property-binding></app-property-binding>
 <app-two-way-data-binding></app-two-way-data-binding>
 <app-ng-if></app-ng-if>
@@ -17,6 +18,12 @@
     <div class="corpo">
         meu segundo conteúdo com select
     </div>
-</app-ng-content>-->
+</app-ng-content>
 
 <app-event-binding></app-event-binding>
+
+<app-input-output [menu]="desenvolvimento" (nomeClicado)="valorPassado($event)"></app-input-output>
+<p>Você clicou em: {{valor}}</p>
+
+<app-formulario></app-formulario>-->
+<app-id></app-id>
